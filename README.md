@@ -27,8 +27,8 @@ For the pipeline to function correctly, the components must be compatible. Speci
 
 * **Core Framework:** [Fairseq](https://github.com/facebookresearch/fairseq) (from Meta AI)
 * **Deep Learning:** PyTorch, TorchAudio
-* **Acoustic Unit Model:** [HuBERT](https://huggingface.co/facebook/hubert-base-ls960) (from Hugging Face)
-* **Vocoder:** [HiFi-GAN](https://github.com/jik876/hifi-gan)
+* **Acoustic Unit Model:** [HuBERT](https://github.com/facebookresearch/fairseq/tree/main/examples/hubert) (as used in Fairseq)
+* **Vocoder:** [Unit-based HiFi-GAN](https://github.com/facebookresearch/speech-resynthesis/tree/main/examples/speech_to_speech_translation) (trained with Speech Resynthesis repo)
 * **Evaluation:** SacreBLEU, Librosa, ROUGE, OpenAI Whisper
 * **Data Handling:** Pandas, NumPy, Scikit-learn
 
@@ -45,7 +45,7 @@ A significant part of this project involved a complex data preparation workflow.
 Evaluating a textless system presents a unique challenge, as the model's output is audio, not text. To quantitatively measure performance, an ASR-based evaluation pipeline was designed:
 
 1.  **Speech-to-Text Transcription:** The synthesized output audio from the model is transcribed back into text using a powerful ASR model. This project used **OpenAI's Whisper** for its high zero-shot accuracy.
-2.  **Metric Calculation:** The transcribed text (hypothesis) is then compared against the ground-truth text (reference) using standard NLP metrics like BLEU, WER, METEOR, ChrF2, and ROUGE to assess translation and correction quality.
+2.  **Metric Calculation:** The transcribed text (hypothesis) is then compared against the ground-truth text (reference) using standard NLP metrics like BLEU and ROUGE to assess translation and correction quality.
 
 ## Setup & Installation
 
