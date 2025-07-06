@@ -4,7 +4,7 @@ This repository contains the code and findings for my graduation project, "Explo
 
 ## Project Overview
 
-This work explores the capabilities of textless speech-to-speech models, focusing on a novel application: **monolingual grammar correction**. The core of the project adapts the standard S2UT pipeline, originally designed for cross-lingual translation, to correct grammatical errors in spoken English.
+This work explores the capabilities of textless speech-to-speech models, focusing on a novel application: **monolingual grammar correction**. The core of the project adapts the standard S2UT pipeline to correct grammatical errors in spoken English. This was achieved by pioneering a textless method to synthetically create paired data by programmatically corrupting the discrete acoustic units of clean speech.
 
 ## System Architecture
 
@@ -32,7 +32,9 @@ To replicate this project, you will need the specific pre-trained models and dat
 | **K-Means Model** | 100-cluster model for HuBERT Base features (layer 6). | [km.bin](https://dl.fbaipublicfiles.com/textless_nlp/gslm/hubert/km100/km.bin) |
 | **Vocoder Checkpoint** | HiFi-GAN vocoder trained on LJSpeech. | [g_00500000](https://dl.fbaipublicfiles.com/fairseq/speech_to_speech/vocoder/code_hifigan/hubert_base_100_lj/g_00500000) |
 | **Vocoder Config** | Configuration file for the HiFi-GAN vocoder. | [config.json](https://dl.fbaipublicfiles.com/fairseq/speech_to_speech/vocoder/code_hifigan/hubert_base_100_lj/config.json) |
-| **LJSpeech Dataset** | Public domain speech dataset used for the grammar correction task. | [Dataset Link](https://keithito.com/LJ-Speech-Dataset/) |
+| **LJSpeech Dataset** | Used for the grammar correction task. Paired data was created synthetically by corrupting the discrete units of the clean speech. | [Dataset Link](https://keithito.com/LJ-Speech-Dataset/) |
+| **CoVoST 2 Dataset** | Source of German audio and English text for the large-scale translation task. | [Dataset Link](https://github.com/facebookresearch/covost) |
+| **CVSS Corpus** | Source of target English audio, used for alignment with CoVoST 2. | [Dataset Link](https://github.com/google-research-datasets/cvss) |
 
 ## Technologies & Frameworks
 
