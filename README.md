@@ -23,6 +23,17 @@ For the pipeline to function correctly, the components must be compatible. Speci
 * **Outperformed SOTA Baselines:** On the large-scale (128k samples) German-to-English translation task, the model achieved a **BLEU score of 28.21**, surpassing the published baseline scores from Meta AI's foundational S2UT paper.
 * **Demonstrated Data-Scale Dependency:** Clearly showed through controlled experiments that the S2UT pipeline's performance is highly dependent on the scale of the training data.
 
+## Required Models & Datasets
+
+To replicate this project, you will need the specific pre-trained models and datasets used.
+
+| Component | Description | Link |
+| :--- | :--- | :--- |
+| **K-Means Model** | 100-cluster model for HuBERT Base features (layer 6). | [km.bin](https://dl.fbaipublicfiles.com/textless_nlp/gslm/hubert/km100/km.bin) |
+| **Vocoder Checkpoint** | HiFi-GAN vocoder trained on LJSpeech. | [g_00500000](https://dl.fbaipublicfiles.com/fairseq/speech_to_speech/vocoder/code_hifigan/hubert_base_100_lj/g_00500000) |
+| **Vocoder Config** | Configuration file for the HiFi-GAN vocoder. | [config.json](https://dl.fbaipublicfiles.com/fairseq/speech_to_speech/vocoder/code_hifigan/hubert_base_100_lj/config.json) |
+| **LJSpeech Dataset** | Public domain speech dataset used for the grammar correction task. | [Dataset Link](https://keithito.com/LJ-Speech-Dataset/) |
+
 ## Technologies & Frameworks
 
 * **Core Framework:** [Fairseq](https://github.com/facebookresearch/fairseq) (from Meta AI)
