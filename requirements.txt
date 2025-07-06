@@ -1,0 +1,24 @@
+# Core Speech & Deep Learning Frameworks
+Python==3.10
+fairseq 
+torch==2.1.0
+torchaudio==2.1.0
+
+# Model & Data Hub
+huggingface-hub~=0.20.0
+
+# Audio Processing & Evaluation
+librosa~=0.10.0
+soundfile
+sacrebleu
+
+# Data Handling & Machine Learning
+pandas~=2.2.0
+numpy~=1.26.0
+scikit-learn~=1.4.0
+joblib~=1.3.0
+
+# Utilities & Visualization
+tqdm
+matplotlib
+ipython
